@@ -10,24 +10,13 @@ on:
  
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-      - name: "Before"
+      - name: 'Before'
         run: ls
-      - uses : actions/checkout@v3
 
-      - name: "Afterr"
-        run: ls  
-      
-      - name: "login to dockerhub"
-        run: docker login --username ${{ secrets.DOCKERUSR }} --password ${{ secrets.DOCKER_TOKEN }}
+      - uses: actions/checkout@v3
 
-      - name: "Docker Build"
-        run: docker build -t ${{ secrets.DOCKERUSR }}/yousefaymanshehab .
-      
-      - name: "Docker Push"
-        run: docker push ${{ secrets.DOCKERUSR }}/yousefaymanshehab
+      - name: 'After'
+        run: ls
